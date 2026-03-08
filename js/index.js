@@ -33,7 +33,7 @@ const toggleStyle = (id) => {
         updateTitleCount(filteredData.length);
         displyAll(filteredData);
     });
-    
+
 }
 
 const loadWordDetails = async (id) => {
@@ -98,7 +98,7 @@ const showWordDetails = (ele) => {
                     </div>
                       <div class="flex justify-end items-end mt-4">
                 <form method="dialog">
-                    <button class="btn bg-blue-600 hover:bg-blue-700 rounded-sm text-white border-none px-10 shadow-lg">
+                    <button class="btn btn-primary rounded-sm text-white px-10 shadow-lg">
                         Close
                     </button>
                 </form>
@@ -106,7 +106,7 @@ const showWordDetails = (ele) => {
                 </div>
     `;
     document.getElementById("issue_modal").showModal()
-    
+
 }
 const displyAll = (datas) => {
 
