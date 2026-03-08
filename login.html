@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- title and icon -->
+    <title>Github Issue Tracker | Login</title>
+    <link rel="shortcut icon" href="./assets/github-logo.png" type="image/x-icon">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- font integration -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <!-- tailwind+daisyui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- theems -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+    <!-- styleSheet -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="min-h-screen max-w-md bg-base-200 mx-auto">
+    <div class="flex flex-col items-center space-y-4">
+        <div class="w-[100px] h=[100px] mt-11">
+            <img src="./assets/github-logo.png" alt="">
+        </div>
+        <h2 class="font-semibold text-2xl">GitHub Issues Tracker</h2>
+        <p class="text-[#64748B]">Sign in to manage your issues</p>
+    </div>
+
+    <div class="from pt-10">
+        <div class="card bg-white w-full max-w-sm shrink-0 shadow rounded-sm mx-auto">
+            <div class="card-body">
+                <fieldset class="fieldset">
+                    <label class="label text-neutral font-bold">Username</label>
+                    <input id="userName" type="text" class="input rounded-sm bg-base-200" placeholder="Enter Username"
+                        value="admin" />
+
+                    <p class="text-sky-600 font-semibold">Default: admin</p>
+
+                    <br>
+                    <label class="label text-neutral font-bold">Password</label>
+                    <input id="loginPass" maxlength="8" minlength="8" type="password"
+                        class="input rounded-sm bg-base-200" placeholder="Enter Default password" required />
+
+                    <p class="text-sky-600 font-semibold">Default: admin123</p>
+
+                    <button id="login-btn" class="btn btn-primary rounded-sm mt-4">Sign In</button>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+    <script>
+
+    </script>
+    <script src="js/login.js"></script>
+</body>
+
+</html>
