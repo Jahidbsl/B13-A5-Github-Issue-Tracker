@@ -53,7 +53,7 @@ const showWordDetails = (ele) => {
         return `<p class="${colorCls} px-3 py-1 rounded-full text-[10px] font-bold uppercase border">${label}</p>`;
     }).join('');
     detailContainer.innerHTML = `
-    <div class="bg-white shadow-xl border border-base-200 rounded-xl p-5 md:p-8 max-w-3xl mx-auto my-6">
+    <div class=" md:p-1 max-w-3xl mx-auto my-6">
                     <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 mb-6">
                         <h2 class="text-xl md:text-2xl font-bold text-base-content">${ele.title}</h2>
 
