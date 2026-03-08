@@ -10,6 +10,25 @@ const manageSpinner = (status) => {
         container.classList.remove("hidden");
     }
 }
+const inputSearch = document.getElementById("inputSearch");
+inputSearch.addEventListener("input", (event) => {
+    manageSpinner(true);
+    const searchValue = event.target.value.trim().toLowerCase();
+    // console.log(searchValue);
+    const url = `https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchValue}`
+    fetch(url)
+        .then(res => res.json())
+        .then(data => {
+            // console.log(data.data)
+            const allDatas = data.data;
+            const filterDatas = allDatas.filter((issue) => issue.title.toLowerCase().includes(searchValue));
+            // console.log(filterDatas)
+            displyAll(filterDatas)
+            manageSpinner(false)
+        })
+        .catch(() => manageSpinner(false));
+});
+
 const updateTitleCount = (count) => {
     document.getElementById("count").innerText = `${count} Issues`;
 }
@@ -32,6 +51,7 @@ const toggleStyle = (id) => {
         }
         updateTitleCount(filteredData.length);
         displyAll(filteredData);
+        manageSpinner(false)
     });
 
 }
@@ -109,7 +129,7 @@ const showWordDetails = (ele) => {
 
 }
 const displyAll = (datas) => {
-
+    manageSpinner(true)
     const cardContainer = document.getElementById("cardContainer");
     cardContainer.innerHTML = "";
 
@@ -162,8 +182,9 @@ const displyAll = (datas) => {
             `;
 
         cardContainer.innerHTML += card;
-        manageSpinner(false)
+
     });
+    manageSpinner(false)
 
 }
 loadIssue = async () => {
