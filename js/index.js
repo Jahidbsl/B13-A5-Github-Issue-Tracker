@@ -24,6 +24,7 @@ inputSearch.addEventListener("input", (event) => {
             const filterDatas = allDatas.filter((issue) => issue.title.toLowerCase().includes(searchValue));
             // console.log(filterDatas)
             displyAll(filterDatas)
+            updateTitleCount(filterDatas.length, "Issues");
             manageSpinner(false)
         })
         .catch(() => manageSpinner(false));
