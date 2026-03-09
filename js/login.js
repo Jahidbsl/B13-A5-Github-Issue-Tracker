@@ -2,9 +2,10 @@ document.getElementById("login-btn").addEventListener("click", (event) => {
 
     // event.preventDefault();
 
-    const userName = document.getElementById("userName").value;
-    const loginPass = document.getElementById("loginPass").value;
-
+    const inputuserName = document.getElementById("userName");
+    const inputloginPass = document.getElementById("loginPass");
+    const userName = inputuserName.value;
+    const loginPass = inputloginPass.value;
     const defaultUser = "admin";
     const defaultPass = "admin123";
 
@@ -14,7 +15,9 @@ document.getElementById("login-btn").addEventListener("click", (event) => {
         window.location.replace("/index.html")
 
     } else {
-        alert("Invaide");
+        alert("Invaide Password");
+        inputloginPass.value = "";
+        inputloginPass.focus();
     }
     // console.log(userName)
     // console.log(loginPass)

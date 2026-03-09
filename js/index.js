@@ -10,6 +10,7 @@ const manageSpinner = (status) => {
         container.classList.remove("hidden");
     }
 }
+
 const inputSearch = document.getElementById("inputSearch");
 inputSearch.addEventListener("input", (event) => {
     manageSpinner(true);
@@ -23,8 +24,15 @@ inputSearch.addEventListener("input", (event) => {
             const allDatas = data.data;
             const filterDatas = allDatas.filter((issue) => issue.title.toLowerCase().includes(searchValue));
             // console.log(filterDatas)
-            displyAll(filterDatas)
-            updateTitleCount(filterDatas.length, "Issues");
+
+            if (searchValue === "") {
+                allIssues
+                // console.log(allIssues)
+                updateTitleCount(allIssues.length, "Issues");
+            } else {
+                displyAll(filterDatas)
+                updateTitleCount(filterDatas.length, "Issues");
+            }
             manageSpinner(false)
         })
         .catch(() => manageSpinner(false));
@@ -158,7 +166,7 @@ const displyAll = (datas) => {
             return `<p class="${colorCls} px-2 rounded-2xl text-center text-[10px] font-medium uppercase">${label}</p>`;
         }).join('');
         const card = `
-          <div onclick="loadWordDetails(${ele.id})" class="card bg-base-100 w-full mt-4 md:mt-4 shadow-sm rounded-sm border-t-4 ${statusColor}">
+          <div onclick="loadWordDetails(${ele.id})" class="card bg-base-100 w-full mt-4 md:mt-4 shadow-sm rounded-sm rounded-t-xl border-t-4 ${statusColor}">
     
           <div class="flex justify-between items-center p-3">
           <div class="shrink-0">${statusImg}</div>
